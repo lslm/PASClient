@@ -1,0 +1,14 @@
+﻿<Window x:Class="PASClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PASClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="452" Width="792">
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="401" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="267"/>
+        <Button x:Name="btnOpenChat" Content="Open chat" HorizontalAlignment="Left" Margin="38,31,0,0" VerticalAlignment="Top" Width="209" Height="49" Click="btnOpenFile_Click"/>
+        <TextBox x:Name="txtFileContent" HorizontalAlignment="Left" Height="401" Margin="282,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="492"/>
+    </Grid>
+</Window>
