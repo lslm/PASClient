@@ -18,6 +18,7 @@ namespace PASClient
             relationPreview += "@attribute Document string\r\n";
             relationPreview += "@attribute class {yes,no}\r\n";
             relationPreview += "@data\r\n";
+            txtTextFilePreview.VerticalScrollBarVisibility = System.Windows.Controls.ScrollBarVisibility.Visible;
         }
 
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
@@ -29,8 +30,9 @@ namespace PASClient
                 string line = "";
 
                 StreamReader file = new StreamReader(openFileDialog.FileName);
-                while ((line = file.ReadLine()) != "end")
+                while ((line = file.ReadLine()) != "--end")
                 {
+                    line = line.Trim();
                     if (!string.IsNullOrEmpty(line))
                     {
                         instances.Add(new Instance("", line));
