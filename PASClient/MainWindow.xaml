@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="452" Width="792">
     <Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="401" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="267"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Margin="10,10,0,10" Stroke="Black" Width="267"/>
         <Button x:Name="btnOpenChat" Content="Open chat" HorizontalAlignment="Left" Margin="38,31,0,0" VerticalAlignment="Top" Width="209" Height="49" Click="btnOpenFile_Click"/>
-        <TextBox x:Name="txtFileContent" HorizontalAlignment="Left" Height="401" Margin="282,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="492"/>
+        <TextBox x:Name="txtFileContent" Margin="282,10,10,10" TextWrapping="Wrap" Text=""/>
     </Grid>
 </Window>
