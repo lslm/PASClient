@@ -46,10 +46,10 @@ namespace PASClient
         private void btnSaveFile_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = "Salvar Arquivo Texto";
-            saveFileDialog.Filter = "Text File|.txt";
+            saveFileDialog.Title = "Save relation file";
+            saveFileDialog.Filter = "Weka Relation File|.arff";
             saveFileDialog.FilterIndex = 0;
-            saveFileDialog.DefaultExt = ".txt";
+            saveFileDialog.DefaultExt = ".arff";
             saveFileDialog.InitialDirectory = @"C:\Dev\PASClient\TrainingFiles";
             saveFileDialog.RestoreDirectory = true;
             
