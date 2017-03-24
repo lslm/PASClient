@@ -1,6 +1,6 @@
 ﻿using PASClient.model;
+using PASClient.Util;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -25,37 +25,40 @@ namespace PASClient
             this.textFileName = "";
             textFile = new TextFile();
         }
-        /*
-        private void btnSaveRelationFile_Click(object sender, RoutedEventArgs e)
-        {
-            string relationFile = textFile.GetRelationFile();
-            if (relationFile.Length != 0)
-            {
-                StreamWriter streamWriter = new StreamWriter(textFile.SavePath);
-                streamWriter.WriteLine(relationFile);
-                streamWriter.Close();
-            }
-            else
-            {
-                System.Windows.MessageBox.Show("Arquivo vazio");
-            }
-        }*/
-
-        private string Dividir(string str)
-        {
-            string newString;
-
-            string[] word = Regex.Split(str, @"\s\(([^)]+)\):");
-
-            newString = word[2];
-
-            return newString;
-        }
 
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             TrainingFileWindow training = new TrainingFileWindow();
             training.Show();
+        }
+
+        private void btnUploadTrainingFile_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+             * Abrir o arquivo de treinamento
+             * Convertelo para base64
+             * Realizar o upload
+             */
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if(openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamReader streamReader = new StreamReader(openFileDialog.FileName);
+
+                string fileContent = streamReader.ReadToEnd();
+                string filename = openFileDialog.SafeFileName;
+
+                if(! string.IsNullOrEmpty(fileContent))
+                {
+                    Encoder encoder = new Encoder();
+                    encoder.EncodeTextFile(fileContent);
+                    encoder.SaveEncodedText(filename);
+
+                    PASService.FileHandlerSEIClient pasService = new PASService.FileHandlerSEIClient();
+                    pasService.upload(filename, encoder.EncodedText);
+                }
+            }
         }
     }
 }
