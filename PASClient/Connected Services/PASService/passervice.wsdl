@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://sei/" targetNamespace="http://sei/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://127.0.0.1:9876/passervice?xsd=1" namespace="http://sei/" />
+    </xsd:schema>
+  </types>
+  <message name="upload">
+    <part name="parameters" element="tns:upload" />
+  </message>
+  <message name="uploadResponse">
+    <part name="parameters" element="tns:uploadResponse" />
+  </message>
+  <message name="getClassification">
+    <part name="parameters" element="tns:getClassification" />
+  </message>
+  <message name="getClassificationResponse">
+    <part name="parameters" element="tns:getClassificationResponse" />
+  </message>
+  <message name="classify">
+    <part name="parameters" element="tns:classify" />
+  </message>
+  <message name="classifyResponse">
+    <part name="parameters" element="tns:classifyResponse" />
+  </message>
+  <message name="createTree">
+    <part name="parameters" element="tns:createTree" />
+  </message>
+  <message name="createTreeResponse">
+    <part name="parameters" element="tns:createTreeResponse" />
+  </message>
+  <message name="uploadChatFile">
+    <part name="parameters" element="tns:uploadChatFile" />
+  </message>
+  <message name="uploadChatFileResponse">
+    <part name="parameters" element="tns:uploadChatFileResponse" />
+  </message>
+  <message name="download">
+    <part name="parameters" element="tns:download" />
+  </message>
+  <message name="downloadResponse">
+    <part name="parameters" element="tns:downloadResponse" />
+  </message>
+  <portType name="IFileHandlerSEI">
+    <operation name="upload">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://sei/IFileHandlerSEI/uploadRequest" message="tns:upload" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://sei/IFileHandlerSEI/uploadResponse" message="tns:uploadResponse" />
+    </operation>
+    <operation name="getClassification">
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://sei/IFileHandlerSEI/getClassificationRequest" message="tns:getClassification" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://sei/IFileHandlerSEI/getClassificationResponse" message="tns:getClassificationResponse" />
+    </operation>
+    <operation name="classify">
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://sei/IFileHandlerSEI/classifyRequest" message="tns:classify" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://sei/IFileHandlerSEI/classifyResponse" message="tns:classifyResponse" />
+    </operation>
+    <operation name="createTree">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://sei/IFileHandlerSEI/createTreeRequest" message="tns:createTree" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://sei/IFileHandlerSEI/createTreeResponse" message="tns:createTreeResponse" />
+    </operation>
+    <operation name="uploadChatFile">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://sei/IFileHandlerSEI/uploadChatFileRequest" message="tns:uploadChatFile" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://sei/IFileHandlerSEI/uploadChatFileResponse" message="tns:uploadChatFileResponse" />
+    </operation>
+    <operation name="download">
+      <input xmlns:ns11="http://www.w3.org/2007/05/addressing/metadata" ns11:Action="http://sei/IFileHandlerSEI/downloadRequest" message="tns:download" />
+      <output xmlns:ns12="http://www.w3.org/2007/05/addressing/metadata" ns12:Action="http://sei/IFileHandlerSEI/downloadResponse" message="tns:downloadResponse" />
+    </operation>
+  </portType>
+</definitions>
